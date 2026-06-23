@@ -1,0 +1,412 @@
+/* ========== RESET & BASE ========== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* ========== HERO HEADER ========== */
+.hero {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border-radius: 0 0 24px 24px;
+    padding: 50px 30px 60px;
+    text-align: center;
+    color: white;
+    margin-bottom: -40px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    font-size: 15px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== UPLOAD BOX ========== */
+.upload-box {
+    border: 2px dashed #93c5fd;
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f0f7ff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upload-box:hover {
+    border-color: #2563eb;
+    background-color: #e8f1ff;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.upload-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.upload-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin: 0 0 4px;
+}
+
+.upload-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ========== FILE NAME ========== */
+.file-name {
+    text-align: center;
+    font-size: 14px;
+    color: #16a34a;
+    font-weight: 600;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+/* ========== ANALYZE BUTTON ========== */
+.analyze-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.analyze-btn:active {
+    transform: translateY(0);
+}
+
+/* ========== LOADING SPINNER ========== */
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #dbeafe;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 14px auto;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* ========== RESULTS SECTION ========== */
+.results {
+    display: none;
+    margin-top: 25px;
+}
+
+/* ========== STAT CARDS ========== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 14px;
+}
+
+.stat-score {
+    background-color: #dcfce7;
+}
+
+.stat-gaps {
+    background-color: #fee2e2;
+}
+
+.stat-strengths {
+    background-color: #dbeafe;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.stat-score .stat-value { color: #16a34a; }
+.stat-gaps .stat-value { color: #dc2626; }
+.stat-strengths .stat-value { color: #2563eb; }
+
+.stat-label {
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* ========== FEEDBACK CARDS ========== */
+.feedback-card {
+    display: flex;
+    gap: 14px;
+    background-color: #f9fafb;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #2563eb;
+}
+
+.feedback-icon {
+    font-size: 24px;
+}
+
+.feedback-content h3 {
+    font-size: 14px;
+    margin: 0 0 4px;
+    color: #1e3a8a;
+}
+
+.feedback-content p {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ========== FEATURES ========== */
+.features {
+    margin-top: 25px;
+}
+
+.features h2 {
+    font-size: 15px;
+    color: #1e3a8a;
+    margin-bottom: 14px;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.feature-icon {
+    font-size: 18px;
+}
+
+/* ========== ACTION BUTTONS ========== */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.history-btn {
+    display: block;
+    width: 100%;
+    background: white;
+    color: #2563eb;
+    border: 1.5px solid #2563eb;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.history-btn:hover {
+    background-color: #f0f7ff;
+}
+
+.compare-btn {
+    border-color: #7c3aed !important;
+    color: #7c3aed !important;
+}
+
+.compare-btn:hover {
+    background-color: #f5f3ff !important;
+}
+
+/* ========== HISTORY SECTION ========== */
+.history-section {
+    margin-top: 20px;
+}
+
+.history-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.history-filename {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+.history-score {
+    background-color: #dcfce7;
+    color: #16a34a;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.history-date {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ========== COMPARE SECTION ========== */
+.compare-section {
+    margin-top: 20px;
+}
+
+.compare-select-box {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 12px;
+}
+
+.compare-select-box label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.compare-select-box select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.compare-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* ========== COMPARE RESULT ========== */
+.compare-result {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 14px;
+    border-left: 4px solid #7c3aed;
+}
+
+.compare-winner {
+    font-size: 16px;
+    font-weight: 700;
+    color: #7c3aed;
+    margin-bottom: 10px;
+}
+
+.compare-result p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+/* ========== FOOTER ========== */
+.footer-text {
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+    margin-top: 20px;
+}

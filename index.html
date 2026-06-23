@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Analyzer</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HERO HEADER -->
+        <div class="hero">
+            <div class="hero-badge">✨ AI-Powered</div>
+            <h1>Resume Analyzer</h1>
+            <p>Upload your resume and get instant, actionable feedback in seconds</p>
+        </div>
+
+        <div class="container">
+
+            <!-- FILE UPLOAD BOX -->
+            <div class="upload-box" id="uploadBox" onclick="document.getElementById('resumeFile').click()">
+                <span class="upload-icon">📤</span>
+                <p class="upload-title">Drop your resume here</p>
+                <p class="upload-subtitle">or click to browse (.pdf only)</p>
+                <input type="file" id="resumeFile" accept=".pdf" onchange="showFileName()" />
+            </div>
+
+            <!-- FILE NAME DISPLAY -->
+            <div class="file-name" id="fileName"></div>
+
+            <!-- ANALYZE BUTTON -->
+            <button class="analyze-btn" onclick="startAnalysis()">
+                <span>⚡ Analyze My Resume</span>
+            </button>
+
+            <!-- LOADING SPINNER -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>🤖 AI is reading your resume... (10-15 seconds)</p>
+            </div>
+
+            <!-- RESULTS SECTION -->
+            <div class="results" id="results">
+
+                <!-- STAT CARDS -->
+                <div class="stats-grid">
+                    <div class="stat-card stat-score">
+                        <div class="stat-value" id="statScore">--</div>
+                        <div class="stat-label">ATS Score</div>
+                    </div>
+                    <div class="stat-card stat-gaps">
+                        <div class="stat-value" id="statGaps">--</div>
+                        <div class="stat-label">Skill Gaps</div>
+                    </div>
+                    <div class="stat-card stat-strengths">
+                        <div class="stat-value" id="statStrengths">--</div>
+                        <div class="stat-label">Strengths</div>
+                    </div>
+                </div>
+
+                <!-- DETAILED FEEDBACK CARDS -->
+                <div class="feedback-card">
+                    <div class="feedback-icon">📌</div>
+                    <div class="feedback-content">
+                        <h3>Missing Skills</h3>
+                        <p id="missingSkillsText">--</p>
+                    </div>
+                </div>
+
+                <div class="feedback-card">
+                    <div class="feedback-icon">💡</div>
+                    <div class="feedback-content">
+                        <h3>Top Suggestion</h3>
+                        <p id="suggestionText">--</p>
+                    </div>
+                </div>
+
+                <div class="feedback-card">
+                    <div class="feedback-icon">✅</div>
+                    <div class="feedback-content">
+                        <h3>Strengths</h3>
+                        <p id="strengthsText">--</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FEATURES (shown before first analysis) -->
+            <div class="features" id="featuresSection">
+                <h2>What you'll get</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <span>ATS Score Check</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔍</span>
+                        <span>Missing Skills Detection</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🤖</span>
+                        <span>Instant AI Feedback</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HISTORY + COMPARE BUTTONS -->
+            <div class="action-buttons">
+                <button class="history-btn" onclick="loadHistory()">📜 View Past Analyses</button>
+                <button class="history-btn compare-btn" onclick="loadCompareOptions()">⚖️ Compare Resumes</button>
+            </div>
+
+            <div class="history-section" id="historySection"></div>
+
+            <div class="compare-section" id="compareSection"></div>
+
+        </div>
+
+        <p class="footer-text">Built by Snehitha 🚀</p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
